@@ -12,7 +12,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 traindata_dir = "../../mpark/data/train"
 traindata_info_file = "../../mpark/data/train.csv"
-save_result_path = "../../mpark/train_result"
+save_result_path = "./train_result"
 
 train_info = pd.read_csv(traindata_info_file)
 
@@ -59,7 +59,7 @@ val_loader = DataLoader(
 model_selector = ModelSelector(
     model_type='timm', 
     num_classes=num_classes,
-    model_name='resnet18', 
+    model_name='resnet50', 
     pretrained=True
 )
 model = model_selector.get_model()

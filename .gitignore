@@ -5,3 +5,4 @@ checkpoints
 eva02convnext2_large_mixupcutmix_kfold
 trained
 __pycache__
+data

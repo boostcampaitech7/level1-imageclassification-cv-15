@@ -1,4 +1,7 @@
 checkpoints
 .git
 .pth
+.venv
+eva02convnext2_large_mixupcutmix_kfold
 trained
+__pycache__

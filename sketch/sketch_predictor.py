@@ -12,6 +12,7 @@ import os
 import numpy as np
 from PIL import Image
 from classes import IMAGENET2012_CLASSES
+import random
 
 st.set_page_config(page_title='Sketch Image Classification', layout='wide')
 
@@ -60,7 +61,7 @@ def inference(
 def show_result(uploaded_file, probability, info_df: pd.DataFrame, class_number: int):
     original_image = Image.open(uploaded_file)
 
-    class_info = info_df[info_df['target'] == class_number].iloc[0]
+    class_info = info_df[info_df['target'] == class_number].iloc[random.randint(0, 10)]
     class_image_path = os.path.join('../data/train', class_info['image_path'])
     class_name = class_info['class_name']
     class_name = IMAGENET2012_CLASSES[class_name]
